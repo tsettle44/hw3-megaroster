@@ -89,7 +89,7 @@ const megaroster = {
   buildListItem(student) {
     const template = document.querySelector('.student.template')
     const li = template.cloneNode(true)
-    this.removeClassName(li, 'template')
+    this.removeClassName(li, 'template')   
     li.querySelector('.student-name').textContent = student.name
     li.dataset.id = student.id
 
@@ -112,3 +112,4 @@ const megaroster = {
   }
 }
 megaroster.init('#studentList')
+
