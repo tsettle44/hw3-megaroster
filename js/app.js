@@ -29,6 +29,12 @@ const megaroster = {
     // this.students.splice(?, 1)
   },
 
+  promoteStudent(ev) {
+    const btn = ev.target
+    const li = btn.closest('.student')
+    li.style.backgroundColor = 'yellow'
+  },
+
   addStudent(ev) {
     ev.preventDefault()
     const f = ev.target
@@ -56,6 +62,8 @@ const megaroster = {
     li.querySelector('.student-name').textContent = student.name
     li.dataset.id = student.id
 
+    li.querySelector('button.success')
+      .addEventListener('click', this.promoteStudent.bind(this))
     li
       .querySelector('button.remove')
       .addEventListener('click', this.removeStudent.bind(this))
