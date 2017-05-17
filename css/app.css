@@ -10,3 +10,7 @@
 .actions {
   float: right;
 }
+
+.button {
+  margin-right: 5px;
+}

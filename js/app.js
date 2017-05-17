@@ -35,6 +35,37 @@ const megaroster = {
     li.style.backgroundColor = 'yellow'
   },
 
+  moveUp(ev) {
+    const btn = ev.target
+    const li = btn.closest('.student')
+
+    const before = li.previousSibling
+    if (before === null) {
+
+    } else {
+      li.remove()
+
+      studentList.insertBefore(li, before)
+    }
+    
+  },
+
+  moveDown(ev) {
+    const btn = ev.target
+    const li = btn.closest('.student')
+
+    const after = li.nextSibling
+    const spot = after.nextSibling
+    if (after.value === studentList.length) {
+
+    } else {
+      li.remove()
+
+      studentList.insertBefore(li, spot)
+    }
+    
+  },
+
   addStudent(ev) {
     ev.preventDefault()
     const f = ev.target
@@ -67,6 +98,12 @@ const megaroster = {
     li
       .querySelector('button.remove')
       .addEventListener('click', this.removeStudent.bind(this))
+    li
+      .querySelector('button.moveUp')
+      .addEventListener('click', this.moveUp.bind(this))
+    li
+      .querySelector('button.moveDown')
+      .addEventListener('click', this.moveDown.bind(this))
     return li
   },
 
