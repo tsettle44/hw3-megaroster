@@ -16,4 +16,8 @@
   border-collapse: gold;
 }
 
+li {
+  list-style: none;
+}
+
 
