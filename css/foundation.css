@@ -2086,7 +2086,6 @@ select {
     cursor: not-allowed; }
 
 .button-group {
-  margin-bottom: 1rem;
   font-size: 0; }
   .button-group::before, .button-group::after {
     display: table;
@@ -2107,7 +2106,7 @@ select {
   .button-group.large .button {
     font-size: 1.25rem; }
   .button-group.expanded {
-    margin-right: -1px; }
+   }
     .button-group.expanded::before, .button-group.expanded::after {
       display: none; }
     .button-group.expanded .button:first-child:last-child {
