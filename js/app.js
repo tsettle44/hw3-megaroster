@@ -15,18 +15,22 @@ const megaroster = {
       .addEventListener('submit', this.addStudent.bind(this))
   },
 
+  save() {
+     localStorage.setItem('student', JSON.stringify(this.students))
+  },
+
   removeStudent(ev) {
     const btn = ev.target
-    btn.closest('.student').remove()
     const id = btn.closest('.student')
 
     for(let i = 0; i < this.students.length; i++) {
-      if(this.students[i].id == id.dataset.id) {
+      if(this.students[i].id.toString() === id.dataset.id) {
         this.students.splice(i, 1)
       }
     }
-    // Remove it from the this.students array
-    // this.students.splice(?, 1)
+
+    id.remove()
+    this.save()
   },
 
   promoteStudent(ev) {
@@ -44,7 +48,6 @@ const megaroster = {
 
     } else {
       li.remove()
-
       studentList.insertBefore(li, before)
     }
     
@@ -80,6 +83,7 @@ const megaroster = {
 
     this.max ++
     f.reset()
+    this.save()
   },
 
   prependChild(parent, child) {
