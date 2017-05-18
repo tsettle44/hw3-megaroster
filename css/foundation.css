@@ -2106,6 +2106,7 @@ select {
   .button-group.large .button {
     font-size: 1.25rem; }
   .button-group.expanded {
+    margin-right: 7px;
    }
     .button-group.expanded::before, .button-group.expanded::after {
       display: none; }
@@ -2113,7 +2114,6 @@ select {
       width: 100%; }
     .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button {
       display: inline-block;
-      width: calc(50% - 1px);
       margin-right: 1px; }
       .button-group.expanded .button:first-child:nth-last-child(2):last-child, .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child {
         margin-right: -6px; }
